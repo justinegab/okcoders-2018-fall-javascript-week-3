@@ -6,17 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My JavaScript Website</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 </head>
+
 <body>
+    <h2 id="pageTitle">Justine's JavaScript Site</h2>
     <input type="text" id="one">
-    <input type="text" id="two">
+    <!-- <input type="text" id="two"> -->
     <button onclick="myMessage()" id="doSomething">Submit</button>
+    <ul id="msg">
+        <li>One</li>
+    </ul>
 </body>
 <script>
-    function myMessage(){
-        var message = "Your Message Has Been Submitted"
-        console.log(message);
-        alert(message);
+    function myMessage() {
+        var one = document.getElementById("one");
+        var msg = document.getElementById("msg");
+
+        var newListItem = one.value;
+        one.value = "";
+
+        // // Change document title
+        // var newTitle = document.getElementById("two").value;
+        // console.log(newTitle);
+        // document.getElementById("pageTitle").innerHTML = newTitle;
+
+        // Add list item
+        var curList = document.getElementById("msg").innerHTML;
+        document.getElementById("msg").innerHTML = curList + "<li>" + newListItem + "</li>";
+        msg.style = "background: #B9E1F0";
     }
-    </script>
+</script>
+
 </html>
