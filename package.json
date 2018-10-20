@@ -1,0 +1,23 @@
+{
+  "name": "fall-2018-javascript-week-2",
+  "version": "1.0.0",
+  "description": "okcoders javascript project",
+  "main": "example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinegab/okcoders-2108-fall-javascript-week-2.git"
+  },
+  "author": "Justine Gab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justinegab/okcoders-2108-fall-javascript-week-2/issues"
+  },
+  "homepage": "https://github.com/justinegab/okcoders-2108-fall-javascript-week-2#readme",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {}
+}
