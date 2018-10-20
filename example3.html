@@ -14,7 +14,7 @@
 <body>
     <h2 id="pageTitle">Justine's JavaScript Site</h2>
     <input type="text" id="one">
-    <!-- <input type="text" id="two"> -->
+    <input type="text" id="two">
     <button onclick="myMessage()" id="doSomething">Submit</button>
     <ul id="msg">
         <li>One</li>
@@ -29,9 +29,9 @@
         one.value = "";
 
         // // Change document title
-        // var newTitle = document.getElementById("two").value;
-        // console.log(newTitle);
-        // document.getElementById("pageTitle").innerHTML = newTitle;
+        var newTitle = document.getElementById("two").value;
+        console.log(newTitle);
+        document.getElementById("pageTitle").innerHTML = newTitle;
 
         // Add list item
         var curList = document.getElementById("msg").innerHTML;
