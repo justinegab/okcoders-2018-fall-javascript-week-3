@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/justinegab/okcoders-2108-fall-javascript-week-2#readme",
   "dependencies": {
+    "commander": "^2.19.0",
     "lodash": "^4.17.11"
   },
   "devDependencies": {}
