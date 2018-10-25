@@ -1,6 +1,8 @@
 // Install package via npm install
 // Local package with require
-var _ = require('lodash');
+const _ = require('lodash');
+const program = require('commander');
+const fs = require('fs');
 
 // Use package based on variable we import with
 
@@ -15,11 +17,46 @@ var _ = require('lodash');
 //  - Remove from List
 //  - Display List
 
-const args = process.argv;
+// program
+//   .version('0.1.0')
+//   .option('-p, --peppers', 'Add peppers')
+//   .option('-P, --pineapple', 'Add pineapple')
+//   .option('-b, --bbq-sauce', 'Add bbq sauce')
+//   .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
+//   .parse(process.argv);
 
-console.log(args)
+// -p, --print
+// -a, --add[name]
+// -r, --remove[name]
+// -d, --display
 
-console.log('Choose an option:');
-console.log('Add to List:');
-console.log('Remove from List:');
-console.log('Print List:');
+program
+    .version('1.0')
+    .option('-p, --print', 'Print Menu')
+    .option('-a, --add [name]','Add to List')
+    .option('-r, --remove [name]','Remove from List')
+    .option('-d, --display','Display List')
+    .parse(process.argv);
+
+if(program.print) {
+    console.log('Print Menu');
+}
+
+if(program.display) {
+    console.log('Display List');
+}
+
+if(program.add) {
+    addItemToList(program.add);
+}
+
+if(program.remove) {
+    console.log('Remove',program.remove);
+}
+
+function addItemToList(itemName) {
+    console.log('Added', itemName);
+    fs.writeFileSync('./list.json', JSON.stringify([itemName]));
+}
+
+fs.writeFileSync('./testfile.txt','Hello Everybody!');
